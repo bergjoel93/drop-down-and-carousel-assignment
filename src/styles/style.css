@@ -1,70 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-$primary-color: #2fa8cc;
-$secondary-color: #f4f4f4;
-$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+15&family=Reddit+Mono:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 * {
+  font-family: "Reddit Mono", monospace;
   box-sizing: border-box;
 }
 
-body {
-  background-color: $primary-color;
-  font-family: 'Roboto', sans-serif;
+:root {
+  --menu-background-color: #164e63;
+  --highlight-color: #083344;
+}
+
+.dropdown-menu * {
+  user-select: none;
+}
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hamburger {
+  background-color: var(--menu-background-color);
+  width: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 20px;
-}
-
-.container {
-  background-color: $secondary-color;
-  border-radius: 10px;
-  box-shadow: $box-shadow;
-  padding: 50px 20px;
-  text-align: center;
-  max-width: 100%;
-  width: 800px;
-}
-
-h3 {
-  margin: 0;
-  opacity: 0.5;
-  letter-spacing: 2px;
-}
-
-img {
-  width: 100px;
-  margin-bottom: 20px;
-}
-
-.joke {
-  font-size: 30px;
-  letter-spacing: 1px;
-  line-height: 40px;
-  margin: 50px auto;
-  max-width: 600px;
-}
-
-.btn {
-  background-color: $primary-color;
-  color: $secondary-color;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-  padding: 14px 40px;
-  font-size: 16px;
+  align-items: center;
+  color: white;
+  padding: 8px;
   cursor: pointer;
+}
 
-  &:active {
-    transform: scale(0.98);
-  }
+.menu-pointer {
+  padding-top: 5px;
+}
 
-  &:focus {
-    outline: 0;
-  }
+.triangle {
+  width: 0px;
+  height: 0px;
+  border-bottom: 18px solid var(--menu-background-color);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  position: relative;
+  bottom: 0px;
+  left: 10px;
+}
+
+.menu-container {
+  display: none;
+  z-index: 1;
+}
+
+.menu-container-2 {
+  background-color: var(--menu-background-color);
+  width: 150px;
+}
+
+.menu-item {
+  padding: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+}
+.menu-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: var(--highlight-color);
+}
+
+/* Carousel Stuff */
+#container {
+  margin: 50px auto;
+  border: solid black 3px;
+  width: 700px;
+  height: 500px;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.picture-frame {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  transition: left 0.5s ease; /* Add transition to the left property */
+}
+
+.slide {
+  flex: none;
+  height: 100%;
+  width: 700px;
+  display: inline-block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.carousel-arrows {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.carousel-button {
+  font-size: 4rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  padding-bottom: 0.4rem;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-nav-dots {
+  position: absolute;
+  padding: 1rem;
+  width: 80%;
+  bottom: 24px;
+  left: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+}
+
+.carousel-nav-dot {
+  border: solid rgba(255, 255, 255, 0.5) 1.5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.carousel-nav-dot.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.8;
 }

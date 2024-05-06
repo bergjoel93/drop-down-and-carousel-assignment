@@ -1,14 +1,15 @@
 {
-  "name": "webpack-starter",
+  "name": "@jberg33/dropdown-and-carousel",
   "version": "1.0.0",
-  "description": "Frontend environment for building JavaScript applications.",
+  "description": "Dropdown menu and picture carousel to practice publishing npm modules.",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "deployGit": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joel Berg <jberg33.student@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.4",
@@ -27,6 +28,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "axios": "^1.6.8"
+    "axios": "^1.6.8",
+    "fs": "^0.0.1-security"
   }
 }
